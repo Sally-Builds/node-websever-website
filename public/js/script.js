@@ -16,11 +16,10 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
  weatherForm.addEventListener('submit', (e) => {
      e.preventDefault()
      const loc = search.value
-     console.log(loc)
 
      msg1.textContent = 'loading....';
      msg2.textContent = ''
-     fetch(`http://localhost:3000/weather?address=${loc}`)
+     fetch(`/weather?address=${loc}`)
     .then((res) =>{
     res.json().then((data) => {
         if(data.error){
